@@ -28,22 +28,13 @@ namespace ObligatorioPOO
             set { apellido = value; }
         }
 
-        String cargo;
-        public String Cargo
-        {
-          get { return cargo; }
-          set { cargo = value; }
-        }
-
-        //No fecha de nacimiento/lugar ?
-
         //Constructor por parametros
-        
-        public Empleado(String cedula, String nombre, String apellido, String cargo)
+        public Empleado(String cedula, String nombre, String apellido)
         {
             this.cedula = cedula;
             this.nombre = nombre;
             this.apellido = apellido;
-            this.cargo = cargo;
         }
+    }
+
 }

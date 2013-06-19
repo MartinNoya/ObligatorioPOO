@@ -22,7 +22,7 @@ namespace ObligatorioPOO
         }
 
         String apellido;
-        public String Apellido1
+        public String Apellido
         {
             get { return apellido; }
             set { apellido = value; }
@@ -42,22 +42,13 @@ namespace ObligatorioPOO
             set { fecha_nacimiento = value; }
         }
 
-
-        //Probar si anda bien
-        public enum Sexo
+        String sexo;
+        public String Sexo
         {
-            Masculino = 1,
-            Femenino = 2
+            get { return sexo; }
+            set { sexo = value; }
         }
-
-        Sexo xy;
-        internal Sexo Xy
-        {
-            get { return xy; }
-            set { xy = value; }
-        }
-        //
-
+        
         DateTime inicio_clases;
         public DateTime Inicio_clases
         {
@@ -80,12 +71,12 @@ namespace ObligatorioPOO
         }
 
         //Constructor por parametros
-        public Cliente(String cedula, String nombre, String apellido, String lugarNac, DateTime fechaNac, DateTime inicioClases, DateTime finalClases, int cantidad)
+        public Cliente(String cedula, String nombre, String apellido, String sexo, String lugarNac, DateTime fechaNac, DateTime inicioClases, DateTime finalClases, int cantidad)
         {
             this.nombre = nombre;
             this.apellido = apellido;
             this.cedula = cedula;
-            //this.xy = 
+            this.sexo = sexo;
             this.lugar_nacimiento = lugarNac;
             this.fecha_nacimiento = fechaNac;
             this.inicio_clases = inicioClases;

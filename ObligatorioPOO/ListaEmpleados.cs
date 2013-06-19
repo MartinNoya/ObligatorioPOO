@@ -8,7 +8,6 @@ namespace ObligatorioPOO
 {
     class ListaEmpleados
     {
-
         private List<Empleado> lista_empleados;
 
         //Agregar un empleado a la empresa.
@@ -17,14 +16,24 @@ namespace ObligatorioPOO
             this.lista_empleados.Add(e);
         }
 
-        //Dar de baja un empleado de la empresa.
-        public void EliminarEmpleado(Empleado e) //Por nombre? cedula?
+        public Empleado BuscarEmpleado(String cedula)
         {
-            this.lista_empleados.Remove(e);
+            foreach (Empleado e in this.lista_empleados)
+            {
+                if (e.Cedula == cedula)
+                    return e;
+            }
+            return null;
+        }
+
+        //Dar de baja un empleado de la empresa.
+        public void EliminarEmpleado(String cedula) //Por nombre? cedula?
+        {
+            this.lista_empleados.Remove(BuscarEmpleado(cedula));
         }
 
         //Dado un chofer, mostrar la cantidad de clases dictadas en un día X.
-            //Implementar IEmpleado con Chofer: IEmpleado y Administrativo: IEmpleado ?
+        //public int CantidadClases(Chofer f)
         
         //Listado de empleados. Windows Form?
         
@@ -40,15 +49,13 @@ namespace ObligatorioPOO
                 //Posicion 0+4*i = Cedula
                 //Posicion 1+4*i = Nombre
                 //Posicion 2+4*i = Apellido
-                //Posicion 3+4*i = Cargo
-            for (int i = 0; i < ArchivoEmpleados.Count; i=i+4)
+             for (int i = 0; i < ArchivoEmpleados.Count; i=i+3)
             {
 	            String cedula = ArchivoEmpleados[i] as String;
                 String nombre = ArchivoEmpleados[i + 1] as String;
                 String apellido = ArchivoEmpleados[i + 2] as String;
-                String cargo = ArchivoEmpleados[i + 3] as String;
-
-                Empleado e = new Empleado(cedula, nombre, apellido, cargo);
+ 
+                Empleado e = new Empleado(cedula, nombre, apellido);
                 AgregarEmpleado(e);
 	        }
         }

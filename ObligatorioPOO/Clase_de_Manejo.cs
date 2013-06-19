@@ -7,11 +7,25 @@ namespace ObligatorioPOO
 {
     class Clase_de_Manejo
     {
-
+        Cliente cliente;
+        Vehiculo vehiculo;
+        Chofer chofer;
+        DateTime fecha;
         //información relevante sobre todo para la facturación y seguimiento de sus clientes.
 
         //Iniciar una clase de manejo, para un cliente, un vehículo en particular y el chofer que dictará las clases.
-        //Cabe aclarar que el vehículo quedará no disponible para otros clientes hasta que termine la clase de manejo.
+        public void Clase_de_Manejo(Cliente c, Vehiculo v, Chofer h, DateTime fecha)
+        {
+
+            
+            this.cliente = c;
+            this.vehiculo = v;
+            //Cabe aclarar que el vehículo quedará no disponible para otros clientes hasta que termine la clase de manejo.
+            this.chofer = h;
+            this.fecha = fecha;
+        }
+
+        
         //Cantidad de clases de manejo a personas mayores (personas donde su edad actual es mayor a 50 años).
         //Finalizar una clase de manejo.
 
